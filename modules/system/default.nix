@@ -1,0 +1,44 @@
+{
+  pkgs,
+  config,
+  host,
+  username,
+  options,
+  lib,
+  inputs,
+  system,
+  ...
+}: {
+  imports = [
+    ./bootloader.nix
+    ./plymouth.nix
+    ./kernel.nix
+    ./nh.nix
+    ./audio.nix
+    ./fonts.nix
+    ./locale.nix
+    ./system-hardware.nix
+    ./stylix.nix
+    ./system.nix
+    ./services.nix
+    ./security.nix
+    ./flatpak.nix
+    ./fonts.nix
+    ./displaymanager.nix
+    ./wayland.nix
+    ./network.nix
+    ./virtualization.nix
+    ./powermanagement.nix
+    ./amd-drivers.nix
+    ./intel-drivers.nix
+    ./vm-guest-services.nix
+    ./local-hardware-clock.nix
+    ./cachix.nix
+    ./packages.nix
+    ./nix.nix
+    ./btrfs.nix
+    ./zfs.nix
+    ./zram.nix
+    
+  ];
+}
