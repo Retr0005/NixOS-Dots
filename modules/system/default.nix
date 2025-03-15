@@ -14,6 +14,8 @@
     ./plymouth.nix
     ./kernel.nix
     ./nh.nix
+    ./nvidia-drivers.nix
+    ./nvidia-prime-drivers.nix
     ./audio.nix
     ./fonts.nix
     ./locale.nix

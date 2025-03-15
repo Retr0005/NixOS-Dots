@@ -49,7 +49,10 @@ in
 
     })
   ];
-  drivers.intel.enable = true;
+
+  drivers = {
+    nvidia.enable = true;
+  };
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
   system.kernel.enable = true;
