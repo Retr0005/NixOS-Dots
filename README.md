@@ -1,5 +1,5 @@
 <h1 align="center">
-   <img src="media/github-repo/nixos-logo.png" width="100px" /> 
+   <img src="./.github/assets/nixos-logo.png" width="100px" /> 
    <br>
       Personal NixOS Dots
    <br>
