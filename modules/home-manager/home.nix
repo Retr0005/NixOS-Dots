@@ -1,42 +1,19 @@
-{
-  config,
-  pkgs,
-  pkgs-master,
-  inputs,
-  options,
-  lib,
-  system,
-  ...
-}: {
+{ config, pkgs, pkgs-master, inputs, options, lib, system, ... }: {
   imports = [
     inputs.hyprland.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
-  ]; 
-  programs.direnv = {
-    enable = true;
-  };
-  programs.bottom = {
-    enable = true;
-  };
+  ];
+  programs.direnv = { enable = true; };
+  programs.bottom = { enable = true; };
   programs.gh = {
     enable = true;
     package = pkgs.gh;
   };
-  programs.lsd = {
-    enable = true;
-  };
-  programs.btop = {
-    enable = true;
-  };
-  programs.bat = {
-    enable = true;
-  };
-  programs.imv = {
-    enable = true;
-  };
-  programs.htop = {
-    enable = true;
-  };
+  programs.lsd = { enable = true; };
+  programs.btop = { enable = true; };
+  programs.bat = { enable = true; };
+  programs.imv = { enable = true; };
+  programs.htop = { enable = true; };
   catppuccin.enable = true;
 
   home.file = {

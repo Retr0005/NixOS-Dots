@@ -1,19 +1,9 @@
-{
-  pkgs,
-  inputs,
-  system,
-  config,
-  lib,
-  options,
-  username,
-  host,
-  ...
-}: {
+{pkgs, ...}: {
   nix = {
     package = pkgs.lix;
     settings = {
-      allowed-users = ["root" "@wheel" "antonio"];
-      trusted-users = ["root" "@wheel" "antonio" "@builders"];
+      allowed-users = ["root" "@wheel" "mao"];
+      trusted-users = ["root" "@wheel" "mao" "@builders"];
       warn-dirty = false;
       auto-optimise-store = true;
       experimental-features = [

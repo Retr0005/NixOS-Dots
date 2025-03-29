@@ -1,16 +1,13 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: #let
+{ inputs, pkgs, ... }:
+#let
 #ghostty = inputs.ghostty.packages.x86_64-linux.default;
 #in
 {
-  home.packages = with pkgs; [ghostty];
+  home.packages = with pkgs; [ ghostty ];
 
   xdg.configFile."ghostty/config".text = ''
     # Font
-    font-family = JetBrainsMono Nerd Font
+    font-family = CaskaydiaMono Nerd Font
     font-size = 14
     font-thicken = true
 
@@ -32,8 +29,8 @@
     mouse-hide-while-typing = true
 
     window-theme = ghostty
-    window-padding-x = 4
-    window-padding-y = 6
+    window-padding-x = 10
+    window-padding-y = 10
     window-padding-balance = true
     window-padding-color = background
     window-inherit-working-directory = true
@@ -66,7 +63,7 @@
     palette = 12=#89b4fa
     palette = 13=#f5c2e7
     palette = 14=#94e2d5
-    palette = 15=#a6adc8 
+    palette = 15=#a6adc8
     background = #181825
     foreground = #cdd6f4
     cursor-color = #f38ba8

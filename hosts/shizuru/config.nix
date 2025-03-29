@@ -10,24 +10,18 @@
   outputs,
   system,
   ...
-}:
-let
-
+}: let
   inherit (import ./variables.nix) keyboardLayout;
-  python-packages = pkgs.python3.withPackages (
-    ps: with ps; [
+  python-packages = pkgs.python3.withPackages (ps:
+    with ps; [
       requests
       pyquery # needed for hyprland-dots Weather script
-    ]
-  );
-
-in
-{
+    ]);
+in {
   imports = [
     ./hardware.nix
     ./users.nix
     ../../modules/system
-
   ];
 
   nixpkgs.overlays = [
@@ -43,40 +37,38 @@ in
         '';
       };
       pkgs-master = import inputs.nixpkgs-master {
-         system = final.system;
-         config.allowUnfree = true;
+        system = final.system;
+        config.allowUnfree = true;
       };
-
     })
   ];
 
-  drivers = {
-    nvidia.enable = true;
-  };
+  drivers = {nvidia.enable = true;};
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
-  system.kernel.enable = true;
-  system.bootloader.enable = true;
-  system.plymouth.enable = true;
-  system.audio.enable = true;
-  system.displayManager.enable = true;
-  system.powermanagement.enable = true;
-  system.btrfs.enable = false;
-  system.zfs.enable = true;
-  system.zram.enable = true;
+  system = {
+    kernel.enable = true;
+    bootloader.enable = true;
+    plymouth.enable = true;
+    audio.enable = true;
+    displayManager.enable = true;
+    powermanagement.enable = true;
+    btrfs.enable = false;
+    zfs.enable = true;
+    zram.enable = true;
+  };
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.efi.canTouchEfiVariables = true;
   catppuccin.tty.enable = true;
   services.xserver.videoDrivers = ["modesetting"];
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
-  users = {
-    mutableUsers = true;
-  };
+  users = {mutableUsers = true;};
+
+  programs.nix-ld.enable = true;
 
   environment.systemPackages =
     (with pkgs; [
-
       lua
 
       fishPlugins.done
@@ -97,17 +89,20 @@ in
       pkgs-master.waybar # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
     ])
-    ++ [
-      python-packages
-    ];
+    ++ [python-packages];
   # OpenGL
-  hardware.graphics = {
-    enable = true;
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
+
   console.keyMap = "dvorak";
   # For Electron apps to use wayland
   environment.variables = {
-    VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
+    VDAPU_DRIVER =
+      lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables = {

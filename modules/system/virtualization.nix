@@ -1,18 +1,9 @@
-{
-  pkgs,
-  config,
-  host,
-  username,
-  options,
-  lib,
-  inputs,
-  system,
-  ...
-}: {
-  virtualisation.libvirtd.enable = false;
-  virtualisation.podman = {
-    enable = false;
-    dockerCompat = false;
-    defaultNetwork.settings.dns_enabled = false;
+{ pkgs, config, host, username, options, lib, inputs, system, ... }: {
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = [ "mao" ];
+
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
   };
 }

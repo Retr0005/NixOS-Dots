@@ -1,27 +1,20 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     inputs.nixcord.homeManagerModules.nixcord
   ];
   programs.nixcord = {
-    enable = false;
+    enable = true;
     vesktop = {
-      enable = false;
+      enable = true;
     };
     config = {
       themeLinks = [
         "https://raw.githubusercontent.com/refact0r/system24/refs/heads/main/theme/flavors/catppuccin-mocha.theme.css"
       ];
       frameless = true;
-      #      enabledThemes = "midnight.theme.css";
       plugins = {
         alwaysTrust.enable = true;
         alwaysAnimate.enable = true;
-        #BetterAnimations.enable = true;
         anonymiseFileNames = {
           enable = true;
           anonymiseByDefault = true;

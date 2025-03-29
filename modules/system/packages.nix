@@ -8,7 +8,6 @@
   chaotic,
   ...
 }: {
-
   # _module.args.pkgs-master = import inputs.nixpkgs-master {
   #   inherit (pkgs.stdenv.hostPlatform) system;
   #   inherit (config.nixpkgs) config;
@@ -17,9 +16,11 @@
     ags_1
     brightnessctl # for brightness control
     libinput
-    libinput-gestures 
+    libinput-gestures
     cliphist
     eog
+    wineWowPackages.waylandFull
+    lutris
     gnome-system-monitor
     file-roller
     grim

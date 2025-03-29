@@ -22,10 +22,10 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-        vulkanPackages_latest.vulkan-loader
-        vulkanPackages_latest.vulkan-validation-layers
-        vulkanPackages_latest.vulkan-tools
-        libva-utils
+      vulkanPackages_latest.vulkan-loader
+      vulkanPackages_latest.vulkan-validation-layers
+      vulkanPackages_latest.vulkan-tools
+      libva-utils
     ];
     hardware.nvidia = {
       prime = {
@@ -35,7 +35,7 @@ in {
         };
         # Make sure to use the correct Bus ID values for your system!
         intelBusId = "${cfg.intelBusID}";
-        nvidiaBusId = "${cfg.nvidiaBusID}";
+        nvidiaBusId = "PCI:0b:00.0";
       };
     };
   };

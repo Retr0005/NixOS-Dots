@@ -18,17 +18,15 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvimdots.url = "github:ayamir/nvimdots";
     nixvim = {
-        url = "github:nix-community/nixvim";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-anywhere = {
       url = "github:numtide/nixos-anywhere";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.disko.follows = "disko";
-    };
-    matugen = {
-      url = "github:/InioX/Matugen";
     };
     nvf.url = "github:notashelf/nvf";
     yazi.url = "github:sxyazi/yazi";
@@ -51,19 +49,13 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-    hyprsunset = {
-      url = "github:hyprwm/hyprsunset";
-    };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
+    hyprsunset = {url = "github:hyprwm/hyprsunset";};
+    ghostty = {url = "github:ghostty-org/ghostty";};
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixcord = {
-      url = "github:kaylorben/nixcord";
-    };
+    nixcord = {url = "github:kaylorben/nixcord";};
     custom-nixpkgs = {
       url = "github:maotseantonio/custom-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -71,21 +63,20 @@
     textfox.url = "github:adriankarlen/textfox";
     hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.2&submodules=1";
     stylix = {
-        url =  "github:danth/stylix";
-        inputs.nixpkgs.follows = "nixpkgs";
-        inputs.home-manager.follows = "home-manager";
-     };
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     zen-browser = {
-        url = "github:youwen5/zen-browser-flake";
-        inputs.nixpkgs.follows = "nixpkgs";
-     
-     };
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nyxexprs.url = "github:notashelf/nyxexprs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     home-manager = {
-        url = "github:nix-community/home-manager";
-        inputs.nixpkgs.follows = "nixpkgs";
-     };
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nh.url = "github:viperML/nh";
     nur.url = "github:nix-community/NUR";
     lix = {
@@ -93,10 +84,14 @@
       flake = false;
     };
     lix-module = {
-      #url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
       url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.lix.follows = "lix";
+    };
+    zjstatus = {url = "github:dj95/zjstatus";};
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = inputs @ {
@@ -110,6 +105,7 @@
     nvf,
     nixvim,
     custom-nixpkgs,
+    zjstatus,
     ...
   }: let
     system = "x86_64-linux";
@@ -120,10 +116,10 @@
       config.allowUnfree = true;
     };
     pkgs-master = import nixpkgs-master {
-        inherit system;
-        config.allowUnfree = true;
+      inherit system;
+      config.allowUnfree = true;
     };
-   overlays = import ./overlays { inherit inputs; };
+    overlays = import ./overlays {inherit inputs;};
   in {
     nixosConfigurations = {
       "${host}" = nixpkgs.lib.nixosSystem {
@@ -138,6 +134,7 @@
         modules = [
           ./hosts/${host}/config.nix
           inputs.chaotic.nixosModules.default
+          inputs.spicetify-nix.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.catppuccin.nixosModules.catppuccin
@@ -150,10 +147,11 @@
               inputs.hyprpanel.overlay
               custom-nixpkgs.overlays.default
               (final: prev: {
-                 stable = import nixpkgs-stable {
-                 config.allowUnfree = true;
-                 config.nvidia.acceptLicense = true;
-                 };
+                stable = import nixpkgs-stable {
+                  config.allowUnfree = true;
+                  config.nvidia.acceptLicense = true;
+                };
+                zjstatus = zjstatus.packages.${pkgs.system}.default;
               })
             ];
           }

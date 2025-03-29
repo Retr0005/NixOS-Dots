@@ -1,16 +1,7 @@
-{
-  pkgs,
-  config,
-  host,
-  username,
-  options,
-  lib,
-  inputs,
-  system,
-  ...
-}: {
+{...}: {
   imports = [
     ./bootloader.nix
+    ./steam.nix
     ./plymouth.nix
     ./kernel.nix
     ./nh.nix
@@ -41,6 +32,5 @@
     ./btrfs.nix
     ./zfs.nix
     ./zram.nix
-    
   ];
 }
