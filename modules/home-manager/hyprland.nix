@@ -15,6 +15,7 @@
       "$mod" = "SUPER";
 
       env = [
+        "GTK_THEME,Adwaita:dark"
         "XDG_CURRENT_DESKTOP, Hyprland"
         "XDG_SESSION_DESKTOP, Hyprland"
         "XDG_SESSION_TYPE, wayland"
@@ -24,7 +25,7 @@
         "MOZ_ENABLE_WAYLAND,1"
         "OZONE_PLATFORM,wayland"
         "CLUTTER_BACKEND,wayland"
-        "SDL_VIDEODRIVER,wayland"
+        #"SDL_VIDEODRIVER,wayland"
         "QT_QPA_PLATFORM,wayland;xcb"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "QT_QPA_PLATFORMTHEME,qt6ct"
@@ -203,11 +204,33 @@
       ];
 
       # Window Rules
+
       windowrulev2 = [
+        "opacity 0.90 0.90, class:^(firefox)$"
+        "opacity 0.90 0.90, class:^(zen-browser)$"
+        "opacity 0.85 0.85, class:^([Aa]lacritty|[Kk]itty|kitty-dropterm|[Gg]hostty)$"
+        "opacity 0.85 0.85, class:^([Nn]eovide)$"
+        "opacity 0.80 0.80, class:^([Tt]hunar)$"
+        "opacity 0.80 0.80, class:^(blueman-manager)$"
+        "opacity 0.80 0.80, class:^(kvantummanager)$"
+        "opacity 0.80 0.80, class:^(nm-applet)$"
+        "opacity 0.80 0.80, class:^(nm-connection-editor)$"
+        "opacity 0.80 0.80, class:^([Ss]team)$"
+        "opacity 0.75 0.75, class:^([Ss]potify)$"
+        "opacity 0.75 0.75, class:^(vesktop)$"
+        "opacity 0.75 0.75, class:^([Dd]iscord)$"
+
         "float, class:^([Aa]lacritty|[Kk]itty|kitty-dropterm)$"
-        "opacity 0.85 0.85, class:^([Aa]lacritty|[Kk]itty|kitty-dropterm)$"
-        "opacity 0.7 0.7, class:^([Ss]potify)$"
-        "opacity 0.85, 0.85, class:^([Nn]eovide)"
+        "float, class:^(blueman-manager-wrapped)$"
+        "float, class:^(xdg-desktop-portal-gtk)$"
+        "float, class:^(xdg-desktop-portal-kde)$"
+        "float, class:^(xdg-desktop-portal-hyprland)$"
+        "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
+        "float, class:^(firefox)$, title:^(Library)$"
+        "float, class:^(kvantummanager)$"
+        "float, class:^([Tt]hunar)$"
+        "float, class:^(nm-applet)$"
+        "float, class:^(nm-connection-editor)$"
       ];
     };
   };

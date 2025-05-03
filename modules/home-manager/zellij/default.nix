@@ -138,8 +138,7 @@ in {
         default_tab_template {
             pane size=2 borderless=true {
                 plugin location="file://${pkgs.zjstatus}/bin/zjstatus.wasm" {
-                    format_left  "{mode}#[fg=blue,bg=#383E5A,bold]  {session} #[fg=#383E5A,bg=bg] #[fg=white,bg=fg]󰓩  {tabs}"
-                    format_right "#[fg=blue,bg=bg]{datetime}"
+                    format_left  "{mode} #[fg=white,bg=fg]󰓩  {tabs}"
                     format_hide_on_overlength "true"
                     format_precedence "lrc"
 
@@ -151,13 +150,13 @@ in {
                     hide_frame_for_single_pane "true"
 
 
-                    mode_normal   "#[fg=#1A1B26,bg=blue,bold] NORMAL #[fg=blue,bg=#383E5A]"
-                    mode_pane     "#[fg=#1A1B26,bg=magenta,bold] PANE #[fg=magenta,bg=#383E5A]"
-                    mode_session  "#[fg=#1A1B26,bg=yellow,bold] SESSION #[fg=yellow,bg=#383E5A]"
-                    mode_tab      "#[fg=#1A1B26,bg=green,bold] TAB #[fg=green,bg=#383E5A]"
+                    mode_normal   "#[fg=#1A1B26,bg=blue,bold] NORMAL #[fg=blue]"
+                    mode_pane     "#[fg=#1A1B26,bg=magenta,bold] PANE #[fg=magenta]"
+                    mode_session  "#[fg=#1A1B26,bg=yellow,bold] SESSION #[fg=yellow]"
+                    mode_tab      "#[fg=#1A1B26,bg=green,bold] TAB #[fg=green]"
 
-                    tab_normal  "#[fg=#A9B1D6,bg=fg] [{index}] {name}"
-                    tab_active  "#[fg=green,bg=fg,bold,italic] [{index}] {name}"
+                    tab_normal  "#[bg=fg] {name}"
+                    tab_active  "#[fg=green,bg=fg,bold,italic] {name}"
 
                     // indicators
                     tab_sync_indicator       " "
@@ -168,10 +167,6 @@ in {
                     command_git_branch_format      "#[fg=blue] {stdout} "
                     command_git_branch_interval    "10"
                     command_git_branch_rendermode  "static"
-
-                    datetime          "#[fg=#1A1B26,bg=blue]{format}"
-                    datetime_format   "  %H:%M "
-                    datetime_timezone "Europe/Rome"
                 }
             }
             children

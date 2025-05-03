@@ -7,6 +7,7 @@
     ./nh.nix
     ./nvidia-drivers.nix
     ./nvidia-prime-drivers.nix
+    ./mpd.nix
     ./audio.nix
     ./fonts.nix
     ./locale.nix
@@ -28,7 +29,9 @@
     ./local-hardware-clock.nix
     ./cachix.nix
     ./packages.nix
+    ./tor.nix
     ./nix.nix
+    ./wayfire.nix
     ./btrfs.nix
     ./zfs.nix
     ./zram.nix

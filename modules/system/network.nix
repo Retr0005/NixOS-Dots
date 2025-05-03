@@ -10,8 +10,16 @@
   system,
   ...
 }: {
-  networking.networkmanager.enable = true;
-  networking.networkmanager.package = pkgs.pkgs-master.networkmanager;
-  networking.hostName = "${host}";
-  networking.timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
+  networking = {
+    networkmanager = {
+      enable = true;
+      package = pkgs.pkgs-master.networkmanager;
+    };
+    hostName = "${host}";
+    timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
+
+    firewall = {
+      enable = true;
+    };
+  };
 }

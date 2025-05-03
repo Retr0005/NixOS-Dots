@@ -43,7 +43,9 @@ in {
     })
   ];
 
-  drivers = {nvidia.enable = true;};
+  drivers = {
+    nvidia.enable = true;
+  };
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
   system = {
@@ -95,6 +97,8 @@ in {
     graphics = {
       enable = true;
       enable32Bit = true;
+      extraPackages = with pkgs; [vulkan-tools];
+      extraPackages32 = with pkgs.pkgsi686Linux; [vulkan-tools];
     };
   };
 

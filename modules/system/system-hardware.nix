@@ -11,7 +11,6 @@
 }: {
   xdg.portal = {
     enable = true;
-    wlr.enable = false;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
@@ -20,7 +19,7 @@
       pkgs.xdg-desktop-portal
     ];
   };
-   powerManagement = {
+  powerManagement = {
     enable = true;
     cpuFreqGovernor = "schedutil";
   };
@@ -32,8 +31,8 @@
   #};
 
   # Extra Logitech Support
-  hardware.logitech.wireless.enable = false;
-  hardware.logitech.wireless.enableGraphical = false;
+  #hardware.logitech.wireless.enable = false;
+  #hardware.logitech.wireless.enableGraphical = false;
 
   # Bluetooth
   hardware = {
@@ -44,11 +43,15 @@
         General = {
           Enable = "Source,Sink,Media,Socket";
           Experimental = true;
+          FastConnectable = true;
+          Privacy = "device";
         };
       };
     };
+
+    xpadneo.enable = true;
   };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
- }
+}

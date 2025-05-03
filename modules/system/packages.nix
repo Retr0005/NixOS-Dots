@@ -21,6 +21,7 @@
     eog
     wineWowPackages.waylandFull
     lutris
+    tor-browser
     gnome-system-monitor
     file-roller
     grim
@@ -86,5 +87,66 @@
     vivid
     (pkgs.callPackage ../../pkgs/nitch.nix {})
     nurl
+    gamescope
+    libpng
+    glibc
+
+    # shadps4 packages
+    clang
+    cmake
+    pkg-config
+
+    alsa-lib
+    pulseaudio
+    libpulseaudio
+    openal
+    openssl
+    zlib
+    libedit
+    udev
+    libevdev
+    SDL2
+    jack2
+    sndio
+    qt6.qtbase
+    qt6.qttools
+    qt6.qtmultimedia
+
+    vulkan-headers
+    vulkan-utility-libraries
+    vulkan-validation-layers
+    vulkan-tools
+
+    kdePackages.qtbase
+    kdePackages.qtdeclarative
+    kdePackages.qtmultimedia
+    kdePackages.qttools
+    kdePackages.qtwayland
+    kdePackages.full
+
+    ffmpeg_6-full
+    fmt
+    glslang
+    libxkbcommon
+    xorg.libxcb
+    xorg.libXext
+    xorg.libX11
+    xorg.xcbutil
+    xorg.xcbutilkeysyms
+    xorg.xcbutilwm
+
+    spirv-tools
+    sdl3
+    stb
+    qt6.qtwayland
+    wayland-protocols
+
+    protonup-qt
+    bottles
+    libglvnd
+    dxvk
+    winetricks
+    libstrangle
+    gamemode
   ];
 }

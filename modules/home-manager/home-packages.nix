@@ -9,12 +9,13 @@
     jdk
     scenebuilder
 
-    qbittorrent-enhanced
+    qbittorrent
     umlet
     plantuml
     zellij
     lua-language-server
 
+    netflix
     pokemonsay
     krabby
     tree-sitter
@@ -23,13 +24,26 @@
     cdemu-client
     cdemu-daemon
     thefuck
+    mangohud
+    thunderbird
+    gearlever
+
+    gnome-themes-extra
+    adwaita-icon-theme
+    onlyoffice-desktopeditors
+    dropbox
+    gamepad-tool
+    antimicrox
+    eww
+    shadps4
+    lm_sensors
 
     qemu
     mesa-demos
     gradle
     go
     gnumake
-    neovim
+    inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
     firefox
     cmatrix
     github-cli
@@ -49,5 +63,9 @@
     gtkmm4
     tmux
     gtk4
+    neofetch
+
+    # Random sheet
+    tetris
   ];
 }

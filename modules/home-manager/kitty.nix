@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.kitty = {
     enable = true;
     package = pkgs.kitty;
 
     settings = {
       font_family = "CaskaydiaMono Nerd Font";
-      font_size = 12;
+      font_size = 10;
       opacity = 1;
       wheel_scroll_min_lines = 1;
       window_padding_width = 10;

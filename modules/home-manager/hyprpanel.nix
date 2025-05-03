@@ -12,10 +12,10 @@
   background-alt = "#${config.lib.stylix.colors.base01}";
   foreground = "#${config.lib.stylix.colors.base05}";
 
-  rounding = 5;
+  rounding = 8;
   border-size = 3;
 
-  gaps-out = 10;
+  gaps-out = 20;
   gaps-in = 20;
 
   floating = true;
@@ -51,8 +51,10 @@ in {
     };
 
     override = {
-      "theme.font.name" = "JetBrainsMono Nerd Font";
+      "theme.font.name" = "CaskaydiaMono Nerd Font Propo";
       "theme.font.size" = "12px";
+      "theme.font.weight" = "600";
+      "theme.font.label" = "CaskaydiaMono Nerd Font Propo Semi-Bold";
       "theme.bar.outer_spacing" = "${
         if floating && transparent
         then "0"
@@ -74,8 +76,8 @@ in {
         then "true"
         else "false"
       }";
-      "theme.bar.buttons.padding_x" = "0.8rem";
-      "theme.bar.buttons.padding_y" = "0.4rem";
+      "theme.bar.buttons.padding_x" = "0.9rem";
+      "theme.bar.buttons.padding_y" = "0.6rem";
       "theme.bar.buttons.workspaces.hover" = "${accent-alt}";
       "theme.bar.buttons.workspaces.active" = "${accent}";
       "theme.bar.buttons.workspaces.available" = "${accent-alt}";

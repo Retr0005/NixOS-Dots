@@ -11,7 +11,7 @@ in {
     enable = mkEnableOption "Enable Nvidia Drivers";
   };
 
-  config = mkIf cfg.enable { 
+  config = mkIf cfg.enable {
     hardware.graphics = {
       enable = true;
       enable32Bit = true;

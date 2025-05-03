@@ -25,5 +25,6 @@
     nerd-fonts.caskaydia-mono
     nerd-fonts.iosevka-term-slab
     iosevka-bin
+    rPackages.phosphoricons
   ];
 }

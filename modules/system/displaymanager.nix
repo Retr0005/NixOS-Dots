@@ -18,13 +18,12 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = [
-        pkgs.kdePackages.qtsvg
-        pkgs.kdePackages.qtmultimedia
-        pkgs.kdePackages.qtvirtualkeyboard
-        (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
-            theme = "pixel_sakura";
-
-        })
+      pkgs.kdePackages.qtsvg
+      pkgs.kdePackages.qtmultimedia
+      pkgs.kdePackages.qtvirtualkeyboard
+      (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
+        theme = "pixel_sakura";
+      })
     ];
     services.xserver.enable = true;
     services.displayManager.defaultSession = "hyprland-uwsm";
@@ -44,12 +43,20 @@ in {
         };
       };
     };
-    programs.uwsm.enable = true;
-    programs.uwsm.waylandCompositors = {
-      hyprland = {
-        prettyName = "Hyprland";
-        comment = "Hyprland compositor manager by UWSM";
-        binPath = "/run/current-system/sw/bin/Hyprland";
+    programs.uwsm = {
+      enable = true;
+      waylandCompositors = {
+        hyprland = {
+          prettyName = "Hyprland";
+          comment = "Hyprland compositor manager by UWSM";
+          binPath = "/run/current-system/sw/bin/Hyprland";
+        };
+
+        wayfire = {
+          prettyName = "Wayfire";
+          comment = "Shit's fire af";
+          binPath = "/run/current-system/sw/bin/wayfire";
+        };
       };
     };
   };
