@@ -1,7 +1,9 @@
 {...}: {
   imports = [
     ./zellij
+    ./hyprlock
 
+    ./stylix.nix
     ./home.nix
     ./git.nix
     ./cava.nix
@@ -10,7 +12,6 @@
     ./fhsenv.nix
     ./nixcord.nix
     ./hyprland.nix
-    ./hyprlock.nix
     ./wofi.nix
     ./fish.nix
     ./home-packages.nix
@@ -20,7 +21,6 @@
     ./zathura.nix
     ./hypridle.nix
     ./kitty.nix
-    ./spicetify.nix
     ./starship.nix
     ./eza.nix
     ./textfox.nix

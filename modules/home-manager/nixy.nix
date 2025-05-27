@@ -5,7 +5,7 @@
   ...
 }: let
   configDirectory = "/home/mao/NixOS-Hyprland/";
-  hostname = "shizuru";
+  hostname = "Laptop";
 
   nixy =
     pkgs.writeShellScriptBin "nixy"

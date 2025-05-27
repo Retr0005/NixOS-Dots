@@ -9,13 +9,33 @@
     jdk
     scenebuilder
 
+    rust-bin.stable.latest.default
+
+    # LSPs
+    jdt-language-server
+    lua-language-server
+    rust-analyzer
+    sourcekit-lsp
+    statix
+    clang-tools
+
+    freecad-wayland
+    kicad-unstable
+
     qbittorrent
-    umlet
     plantuml
     zellij
-    lua-language-server
+    gimp-with-plugins
+    rmpc
+    yt-dlp
 
-    netflix
+    gsettings-desktop-schemas
+    libGL
+    libGLU
+    xz
+    devenv
+    protonup-qt
+
     pokemonsay
     krabby
     tree-sitter
@@ -23,20 +43,16 @@
     rar
     cdemu-client
     cdemu-daemon
-    thefuck
-    mangohud
-    thunderbird
-    gearlever
 
     gnome-themes-extra
     adwaita-icon-theme
-    onlyoffice-desktopeditors
     dropbox
-    gamepad-tool
-    antimicrox
     eww
-    shadps4
     lm_sensors
+    bc
+    vimgolf
+    watchexec
+    pipes
 
     qemu
     mesa-demos
@@ -48,15 +64,12 @@
     cmatrix
     github-cli
     neovide
-    wezterm
     hyprpicker
     hyprpanel
-    inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     inputs.zen-browser.packages."${pkgs.system}".default
     pkgs-master.microfetch
-    inputs.yazi.packages.${pkgs.system}.yazi
     gpu-screen-recorder
     libqalculate
     dbus-glib
@@ -64,8 +77,6 @@
     tmux
     gtk4
     neofetch
-
-    # Random sheet
-    tetris
+    alacritty
   ];
 }

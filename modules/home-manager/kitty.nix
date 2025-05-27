@@ -4,9 +4,10 @@
     package = pkgs.kitty;
 
     settings = {
-      font_family = "CaskaydiaMono Nerd Font";
-      font_size = 10;
-      opacity = 1;
+      font_family = "Dank Mono Nerd Font";
+      italic_font = "Victor Mono";
+      font_size = 13;
+      opacity = 0.8;
       wheel_scroll_min_lines = 1;
       window_padding_width = 10;
       confirm_os_window_close = 0;

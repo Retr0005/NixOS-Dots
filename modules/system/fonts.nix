@@ -11,7 +11,8 @@
 }: {
   fonts.packages = with pkgs; [
     noto-fonts
-    #fira-code
+    geist-font
+    victor-mono
     noto-fonts-cjk-sans
     jetbrains-mono
     material-icons

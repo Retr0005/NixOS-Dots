@@ -13,6 +13,7 @@
       grow = "sudo nixos-rebuild switch --flake ~/NixOS-Hyprland/#shizuru";
       n = "nvim";
       f = "hyprpanel &";
+      d = "kitten icat -n --place 30x30@0x6 --scale-up --align left ~/Downloads/Diddy.jpg | fastfetch --logo-width 30 --raw -";
     };
 
     functions = {

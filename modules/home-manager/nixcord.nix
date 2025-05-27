@@ -5,41 +5,41 @@
   ...
 }: {
   imports = [
-    inputs.nixcord.homeManagerModules.nixcord
+    inputs.nixcord.homeModules.nixcord
   ];
   programs.nixcord = {
     enable = true;
     vesktop = {
       enable = true;
       settings = {
-        discordBranch = "canary";
+	discordBranch = "canary";
         staticTitle = false;
         splashTheming = true;
-        splashColor = "rgb(186,194,222)";
-        splashBackground = "rgb(30,30,46)";
+        splashColor = "rgb(186, 194, 222)";
+        splashBackground = "rgb(30, 30, 46)";
         arRPC = false;
-        minimizeToTray = true;
-      };
+        minimizeToTray = true;	
+     };
     };
-
     config = {
       themeLinks = [
-        "https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css"
+         "https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css"
       ];
       frameless = true;
       enabledThemes = ["midnight-catppuccin-mocha.theme.css"];
       plugins = {
         alwaysTrust.enable = true;
         alwaysAnimate.enable = true;
+        #BetterAnimations.enable = true;
         anonymiseFileNames = {
           enable = true;
           anonymiseByDefault = true;
         };
         banger.enable = true;
-        betterFolders = {
-          enable = true;
-          showFolderIcon = "always";
-        };
+        # betterFolders = {
+        #   enable = true;
+        #   showFolderIcon = "always";
+        # };
         betterGifAltText.enable = true;
         betterGifPicker.enable = true;
         betterNotesBox.enable = true;
@@ -130,5 +130,5 @@
         youtubeAdblock.enable = true;
       };
     };
-  };
-}
+ };
+}     

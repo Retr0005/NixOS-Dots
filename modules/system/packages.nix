@@ -93,6 +93,7 @@
 
     # shadps4 packages
     clang
+    gcc
     cmake
     pkg-config
 
@@ -140,13 +141,5 @@
     stb
     qt6.qtwayland
     wayland-protocols
-
-    protonup-qt
-    bottles
-    libglvnd
-    dxvk
-    winetricks
-    libstrangle
-    gamemode
   ];
 }

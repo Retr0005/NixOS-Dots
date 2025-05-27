@@ -2,21 +2,26 @@
 {
   programs.cava = {
     enable = true;
+
     settings = {
-      # General
       general = {
-        framerate = 120;
-        autosens = 4;
-        overshoot = 0;
-        sensitivity = 50;
+        framerate = 144;
+        sensitivity = 100;
         bars = 0;
-        bar_width = 6.0;
-        bar_spacing = 1.0;
+        bar_width = 1;
+        bar_spacing = 0;
       };
+
+      output = {
+        method = "noncurses";
+        channels = "stereo";
+        mono_option = "average";
+      };
+
       smoothing = {
-        monstercat = 0;
+        monstercat = 1;
         waves = 0;
-        gravity = 100;
+        noise_reduction = 72;
       };
     };
   };

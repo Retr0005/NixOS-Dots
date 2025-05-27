@@ -18,7 +18,7 @@
       desktopManager.runXdgAutostartIfNone = true;
       xkb = {
         layout = "us";
-        variant = "";
+        variant = "dvorak";
       };
     };
 

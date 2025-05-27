@@ -18,7 +18,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvimdots.url = "github:ayamir/nvimdots";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -64,8 +63,8 @@
     hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.2&submodules=1";
     stylix = {
       url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
+      #inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.home-manager.follows = "home-manager";
     };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
@@ -94,6 +93,10 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs @ {
     self,
@@ -108,56 +111,55 @@
     custom-nixpkgs,
     zjstatus,
     ...
-  }: let
-    system = "x86_64-linux";
-    host = "shizuru";
-    username = "mao";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    pkgs-master = import nixpkgs-master {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    overlays = import ./overlays {inherit inputs;};
-  in {
-    nixosConfigurations = {
-      "${host}" = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit system;
-          inherit inputs;
-          inherit username;
-          inherit host;
-          inherit chaotic;
-          inherit pkgs-master;
+    }: let
+      system = "x86_64-linux";
+      host = "Laptop";
+      username = "mao";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      pkgs-master = import nixpkgs-master {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      overlays = import ./overlays {inherit inputs;};
+    in {
+      nixosConfigurations = {
+        "${host}" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit inputs;
+            inherit username;
+            inherit host;
+            inherit chaotic;
+            inherit pkgs-master;
+          };
+          modules = [
+            ./hosts/${host}/config.nix
+            inputs.chaotic.nixosModules.default
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            inputs.catppuccin.nixosModules.catppuccin
+            inputs.nixos-hardware.nixosModules.huawei-machc-wa
+            lix-module.nixosModules.default
+            inputs.nvf.nixosModules.default
+            {
+              nixpkgs.overlays = [
+                inputs.hyprpanel.overlay
+                inputs.rust-overlay.overlays.default
+                custom-nixpkgs.overlays.default
+                (final: prev: {
+                  stable = import nixpkgs-stable {
+                    config.allowUnfree = true;
+                    config.nvidia.acceptLicense = true;
+                  };
+                  zjstatus = zjstatus.packages.${pkgs.system}.default;
+                })
+              ];
+            }
+          ];
         };
-        modules = [
-          ./hosts/${host}/config.nix
-          inputs.chaotic.nixosModules.default
-          inputs.spicetify-nix.nixosModules.default
-          inputs.home-manager.nixosModules.home-manager
-          inputs.stylix.nixosModules.stylix
-          inputs.catppuccin.nixosModules.catppuccin
-          inputs.nixos-hardware.nixosModules.huawei-machc-wa
-          lix-module.nixosModules.default
-          inputs.nvf.nixosModules.default
-          inputs.nixvim.nixosModules.default
-          {
-            nixpkgs.overlays = [
-              inputs.hyprpanel.overlay
-              custom-nixpkgs.overlays.default
-              (final: prev: {
-                stable = import nixpkgs-stable {
-                  config.allowUnfree = true;
-                  config.nvidia.acceptLicense = true;
-                };
-                zjstatus = zjstatus.packages.${pkgs.system}.default;
-              })
-            ];
-          }
-        ];
       };
     };
-  };
 }

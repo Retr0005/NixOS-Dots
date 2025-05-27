@@ -42,6 +42,7 @@ in {
             "systray"
             "volume"
             "bluetooth"
+            "battery"
             "network"
             "clock"
             "notifications"
@@ -53,7 +54,7 @@ in {
     override = {
       "theme.font.name" = "CaskaydiaMono Nerd Font Propo";
       "theme.font.size" = "12px";
-      "theme.font.weight" = "600";
+      "theme.font.weight" = "700";
       "theme.font.label" = "CaskaydiaMono Nerd Font Propo Semi-Bold";
       "theme.bar.outer_spacing" = "${
         if floating && transparent
@@ -115,7 +116,7 @@ in {
       "menus.clock.weather.location" = "${location}";
       "menus.clock.weather.unit" = "metric";
       "menus.dashboard.powermenu.confirmation" = true;
-      "menus.dashboard.powermenu.avatar.image" = "~/.face.icon";
+      "menus.dashboard.powermenu.avatar.image" = "~/Downloads/Diddy.jpg";
 
       "menus.dashboard.shortcuts.left.shortcut1.icon" = "";
       "menus.dashboard.shortcuts.left.shortcut1.command" = "zen";

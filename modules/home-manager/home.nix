@@ -1,20 +1,49 @@
-{ config, pkgs, pkgs-master, inputs, options, lib, system, ... }: {
+{ 
+  config, 
+  pkgs, 
+  inputs,
+  lib,
+  ... 
+}: {
   imports = [
     inputs.hyprland.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
-  programs.direnv = { enable = true; };
-  programs.bottom = { enable = true; };
-  programs.gh = {
-    enable = true;
-    package = pkgs.gh;
+  programs = {
+    direnv = {
+      enable = true;
+    };
+    bottom = {
+      enable = true;
+    };
+    lsd = {
+      enable = true;
+    };
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = lib.mkForce "stylix";
+      };
+    };
+    htop = {
+      enable = true;
+    };
+    gh = {
+      enable = true;
+      package = pkgs.gh;
+    };
+    bat = {
+      enable = true;
+      config.theme = lib.mkForce "base16-stylix";
+    };
   };
-  programs.lsd = { enable = true; };
-  programs.btop = { enable = true; };
-  programs.bat = { enable = true; };
-  programs.imv = { enable = true; };
-  programs.htop = { enable = true; };
   catppuccin.enable = true;
+
+  qt = {
+    enable = true;
+    platformTheme.name = lib.mkForce "kvantum";
+    style.name = lib.mkForce "kvantum";
+  };
 
   home.file = {
     # # symlink to the Nix store copy.

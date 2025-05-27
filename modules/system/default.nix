@@ -12,8 +12,9 @@
     ./fonts.nix
     ./locale.nix
     ./system-hardware.nix
-    ./stylix.nix
+    #./stylix.nix
     ./system.nix
+    ./spicetify.nix
     ./services.nix
     ./security.nix
     ./flatpak.nix
