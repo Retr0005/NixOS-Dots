@@ -34,6 +34,13 @@
       flake = false;
     };
 
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    walker.url = "github:abenz1267/walker";
+
     ags = {
       url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,6 +48,10 @@
 
     astal = {
       url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    astal-bar = {
+      url = "github:maotseantonio/astal-bar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -147,6 +158,7 @@
             {
               nixpkgs.overlays = [
                 inputs.hyprpanel.overlay
+                inputs.niri.overlays.niri
                 inputs.rust-overlay.overlays.default
                 custom-nixpkgs.overlays.default
                 (final: prev: {

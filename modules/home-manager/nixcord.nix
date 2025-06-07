@@ -17,16 +17,13 @@
         splashTheming = true;
         splashColor = "rgb(186, 194, 222)";
         splashBackground = "rgb(30, 30, 46)";
-        arRPC = false;
+        arRPC = true;
         minimizeToTray = true;	
      };
     };
     config = {
-      themeLinks = [
-         "https://raw.githubusercontent.com/maotseantonio/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css"
-      ];
       frameless = true;
-      enabledThemes = ["midnight-catppuccin-mocha.theme.css"];
+      enabledThemes = ["tokyo-night-night.theme.css"];
       plugins = {
         alwaysTrust.enable = true;
         alwaysAnimate.enable = true;
@@ -131,4 +128,4 @@
       };
     };
  };
-}     
+}

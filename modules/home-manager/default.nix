@@ -2,6 +2,7 @@
   imports = [
     ./zellij
     ./hyprlock
+    ./niri
 
     ./stylix.nix
     ./home.nix

@@ -69,6 +69,7 @@
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     inputs.zen-browser.packages."${pkgs.system}".default
+    inputs.walker.packages.${pkgs.system}.default
     pkgs-master.microfetch
     gpu-screen-recorder
     libqalculate
