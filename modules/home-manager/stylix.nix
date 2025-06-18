@@ -12,7 +12,7 @@
         };
         polarity = "dark";
         #targets.nixos-icons.enable = true;
-        image = ./assets/rain.jpg;
+        image = ./assets/pastel-car.png;
         fonts = {
             sizes = {
                 terminal = 13;
@@ -21,18 +21,18 @@
             };
 
             serif = {
-                name = "Dank Mono Nerd Font";
+                name = "CaskaydiaCove Nerd Font";
                 package = pkgs.nerd-fonts.caskaydia-mono;
             };
 
             sansSerif = {
-                name = "Dank Mono Nerd Font";
+                name = "CaskaydiaCove Nerd Font";
                 package = pkgs.nerd-fonts.caskaydia-mono;
             };
 
             monospace = {
                 package = pkgs.nerd-fonts.caskaydia-mono;
-                name = "Dank Mono Nerd Font";
+                name = "CaskaydiaCove Nerd Font";
             };
 
             emoji = {

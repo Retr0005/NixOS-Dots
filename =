@@ -5,6 +5,7 @@
 }: {
   home.packages = with pkgs; [
     jetbrains.idea-ultimate
+    jetbrains-toolbox
     jdk
     scenebuilder
 
@@ -26,6 +27,7 @@
     zellij
     gimp-with-plugins
     rmpc
+    yt-dlp
     obs-studio
 
     gsettings-desktop-schemas
@@ -40,10 +42,13 @@
     tree-sitter
     ascii-image-converter
     rar
+    cdemu-client
+    cdemu-daemon
 
     gnome-themes-extra
     adwaita-icon-theme
     dropbox
+    eww
     lm_sensors
     bc
     vimgolf
@@ -66,6 +71,7 @@
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     inputs.zen-browser.packages."${pkgs.system}".default
     inputs.walker.packages.${pkgs.system}.default
+    #inputs.quickshell.packages.${pkgs.system}.default
     pkgs-master.microfetch
     gpu-screen-recorder
     libqalculate

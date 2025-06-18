@@ -38,8 +38,6 @@
     pkgs-master.networkmanagerapplet
     nwg-look # requires unstable channel
     nwg-dock-hyprland
-    # nvtopPackages.full
-    #inputs.nixpkgs-master.legacyPackages.${pkgs.system}.pamixer
     pkgs-master.pamixer
     pkgs-master.gitui
     pavucontrol
@@ -47,7 +45,6 @@
     polkit_gnome
     pyprland
     libsForQt5.qt5ct
-    # kdePackages.full
     qt6ct
     qt6.qtwayland
     qt6Packages.qtstyleplugin-kvantum #kvantum
@@ -66,7 +63,6 @@
     fd
     home-manager
     bluez-tools
-    #wgpu-utils
     gtk3
     gtk4
     fish
@@ -91,12 +87,6 @@
     libpng
     glibc
 
-    # shadps4 packages
-    clang
-    gcc
-    cmake
-    pkg-config
-
     alsa-lib
     pulseaudio
     libpulseaudio
@@ -118,13 +108,6 @@
     vulkan-validation-layers
     vulkan-tools
 
-    kdePackages.qtbase
-    kdePackages.qtdeclarative
-    kdePackages.qtmultimedia
-    kdePackages.qttools
-    kdePackages.qtwayland
-    kdePackages.full
-
     ffmpeg_6-full
     fmt
     glslang
@@ -141,5 +124,6 @@
     stb
     qt6.qtwayland
     wayland-protocols
+    pkg-config
   ];
 }

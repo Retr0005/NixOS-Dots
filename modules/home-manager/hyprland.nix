@@ -214,7 +214,7 @@
           "$mod, A, exec, kitty"
           "$mod, return, exec, ghostty"
           "$mod, E, exec, firefox"
-          "$mod, R, exec, wofi"
+          "$mod, R, exec, walker"
 
           "$mod, Q, killactive,"
           "$mod, O, togglefloating,"
@@ -259,7 +259,7 @@
         "opacity 0.80 0.80, class:^([Nn]eovide)$"
         "opacity 0.75 0.75, class:^([Ss]potify)$"
         "opacity 0.80 0.80, class:^(blueman-manager)$"
-        "opacity 0.85 0.85, class:^([Aa]lacritty|[Kk]itty|kitty-dropterm|[Gg]hostty)$"
+        "opacity 0.90 0.90, class:^([Aa]lacritty|[Kk]itty|kitty-dropterm|[Gg]hostty)$"
         "opacity 0.80 0.80, class:^(kvantummanager)$"
         "opacity 0.80 0.80, class:^(nm-applet)$"
         "opacity 0.80 0.80, class:^(nm-connection-editor)$"

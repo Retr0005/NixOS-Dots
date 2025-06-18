@@ -1,25 +1,36 @@
 {
-config,
-pkgs,
-lib,
-inputs,
-...
-}: let 
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-in {
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   imports = [
-    inputs.spicetify-nix.nixosModules.default
+      inputs.spicetify-nix.nixosModules.default
   ];
-  programs.spicetify = lib.mkForce {
-    enable = true;
-    enabledExtensions = with spicePkgs.extensions; [
-      adblock
-      hidePodcasts
-      beautifulLyrics
-      autoSkipExplicit
-      shuffle # shuffle+ (special characters are sanitized out of extension names)
-    ];
-    theme = spicePkgs.themes.text;
-    colorScheme = "CatppuccinMocha";
-  };
+  programs.spicetify =
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in
+    {
+      enable = true;
+      enabledExtensions = with spicePkgs.extensions; [
+        powerBar
+        fullAlbumDate
+        fullAppDisplay
+        listPlaylistsWithSong
+        volumePercentage
+        adblock
+        hidePodcasts
+        beautifulLyrics
+        autoSkipExplicit
+        shuffle # shuffle+ (special characters are sanitized out of extension names)
+      ];
+      enabledCustomApps = with spicePkgs.apps; [
+         lyricsPlus
+         newReleases
+      ];
+      theme = spicePkgs.themes.text;
+      colorScheme = "CatppuccinMocha";
+    };
 }

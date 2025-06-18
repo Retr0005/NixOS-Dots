@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1"; 
@@ -23,5 +23,6 @@
     XDG_SESSION_DESKTOP = "Hyprland";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland"; 
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 }
