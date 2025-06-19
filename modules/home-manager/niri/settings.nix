@@ -10,7 +10,7 @@ inputs,
   };
 in {
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome pkgs.gnome-keyring]; 
-  home.packages = [pkgs.wl-clipboard inputs.astal-bar.packages.${pkgs.system}.default inputs.astal.packages.${pkgs.system}.default ];
+  home.packages = [pkgs.wl-clipboard inputs.astal.packages.${pkgs.system}.default ];
 
   programs.niri = { 
     enable = true;
@@ -50,7 +50,6 @@ in {
         (makeCommand "wl-paste --watch walker --update-clipboard")
         (makeCommand "swww-daemon")
         (makeCommand "waybar")
-        (makeCommand "${inputs.astal-bar.packages.${pkgs.system}.default}/bin/kaneru")
         (makeCommand "uwsm finalize")
         (makeCommand "blueman-applet")
         (makeCommand "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")

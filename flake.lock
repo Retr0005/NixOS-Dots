@@ -23,7 +23,7 @@
     },
     "ags_2": {
       "inputs": {
-        "astal": "astal_4",
+        "astal": "astal_3",
         "nixpkgs": [
           "hyprpanel",
           "nixpkgs"
@@ -118,27 +118,6 @@
         "type": "github"
       }
     },
-    "astal-bar": {
-      "inputs": {
-        "astal": "astal_3",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1747801265,
-        "narHash": "sha256-hBUgfMMkWU3eD37VVOVMLBOsZbCcc3wpL1DA/ghlOBk=",
-        "owner": "maotseantonio",
-        "repo": "astal-bar",
-        "rev": "b14844e323352c2374ad419ba03be2fccc8c1c6b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "maotseantonio",
-        "repo": "astal-bar",
-        "type": "github"
-      }
-    },
     "astal_2": {
       "inputs": {
         "nixpkgs": [
@@ -162,27 +141,6 @@
     "astal_3": {
       "inputs": {
         "nixpkgs": [
-          "astal-bar",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1741396597,
-        "narHash": "sha256-RQYpdggQLWTynaT1ISqbACo8plSTBNunG8rv8+A82g0=",
-        "owner": "aylur",
-        "repo": "astal",
-        "rev": "f38433594051ee75957720d1c36de00896a67eb6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "aylur",
-        "repo": "astal",
-        "type": "github"
-      }
-    },
-    "astal_4": {
-      "inputs": {
-        "nixpkgs": [
           "hyprpanel",
           "ags",
           "nixpkgs"
@@ -202,7 +160,7 @@
         "type": "github"
       }
     },
-    "astal_5": {
+    "astal_4": {
       "inputs": {
         "nixpkgs": [
           "hyprpanel",
@@ -1320,36 +1278,6 @@
         "url": "https://github.com/hyprwm/hyprland"
       }
     },
-    "hyprland-plugins": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ],
-        "nixpkgs": [
-          "hyprland-plugins",
-          "hyprland",
-          "nixpkgs"
-        ],
-        "systems": [
-          "hyprland-plugins",
-          "hyprland",
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1738966025,
-        "narHash": "sha256-MzgrF0jKlTNnNS33D8PwI5z2MJ1Tzf5MQVf/oms2pdw=",
-        "owner": "hyprwm",
-        "repo": "hyprland-plugins",
-        "rev": "4f48dbe12f3cbbeb4d31c91c67b21edbc5b4b451",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hyprwm",
-        "repo": "hyprland-plugins",
-        "type": "github"
-      }
-    },
     "hyprland-protocols": {
       "inputs": {
         "nixpkgs": [
@@ -1520,7 +1448,7 @@
     "hyprpanel": {
       "inputs": {
         "ags": "ags_2",
-        "astal": "astal_5",
+        "astal": "astal_4",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -2755,32 +2683,11 @@
         "type": "github"
       }
     },
-    "quickshell": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1749292015,
-        "narHash": "sha256-y2rhYVVmetiNCg3UdN6qy/MpOTY8Mu2uOiJhfgdatsI=",
-        "ref": "refs/heads/master",
-        "rev": "ee570ec623a59561c96de2eea5a4af51385db38e",
-        "revCount": 567,
-        "type": "git",
-        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
-      }
-    },
     "root": {
       "inputs": {
         "ags": "ags",
         "anyrun": "anyrun",
         "astal": "astal_2",
-        "astal-bar": "astal-bar",
         "catppuccin": "catppuccin",
         "chaotic": "chaotic",
         "custom-nixpkgs": "custom-nixpkgs",
@@ -2788,7 +2695,6 @@
         "ghostty": "ghostty",
         "home-manager": "home-manager_2",
         "hyprland": "hyprland",
-        "hyprland-plugins": "hyprland-plugins",
         "hyprpanel": "hyprpanel",
         "hyprsunset": "hyprsunset",
         "lix": "lix",
@@ -2809,7 +2715,6 @@
         "nur": "nur",
         "nvf": "nvf",
         "nyxexprs": "nyxexprs",
-        "quickshell": "quickshell",
         "rust-overlay": "rust-overlay_2",
         "sf-mono-liga-src": "sf-mono-liga-src",
         "spicetify-nix": "spicetify-nix",

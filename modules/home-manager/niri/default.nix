@@ -21,7 +21,6 @@ in
     packages = with pkgs; [
       gnome-keyring
       wl-clipboard
-      inputs.astal-bar.packages.${pkgs.system}.default
       inputs.astal.packages.${pkgs.system}.default
       wallpaperScript
       seatd
