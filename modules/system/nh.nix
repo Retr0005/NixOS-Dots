@@ -11,14 +11,10 @@
 }: {
   programs.nh = {
     enable = true;
-    flake = "/home/antonio/NixOS-Hyprland";
+    flake = "/home/mao/NixOS-Dots";
     clean = {
       enable = true;
-      extraArgs = "--keep-since 3d --keep 3";
+      extraArgs = "--keep-since 4d --keep 3";
     };
   };
-  environment.systemPackages = with pkgs; [
-    nix-output-monitor
-    nvd
-  ];
 }

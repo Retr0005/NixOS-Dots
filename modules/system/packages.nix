@@ -35,10 +35,12 @@
     jq
     kitty
     libsForQt5.qtstyleplugin-kvantum #kvantum
-    pkgs-master.networkmanagerapplet
     nwg-look # requires unstable channel
     nwg-dock-hyprland
+    pkgs-master.jetbrains.idea-ultimate
+    pkgs-master.networkmanagerapplet
     pkgs-master.pamixer
+    #pkgs-master.spotify
     pkgs-master.gitui
     pavucontrol
     playerctl
@@ -77,7 +79,6 @@
     vesktop
     papirus-folders
     papirus-icon-theme
-    spotify
     zoxide
     bibata-cursors
     vivid
@@ -125,5 +126,8 @@
     qt6.qtwayland
     wayland-protocols
     pkg-config
+    jujutsu_git
+    nix-output-monitor
+    nvd
   ];
 }

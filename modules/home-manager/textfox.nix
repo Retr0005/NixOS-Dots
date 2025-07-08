@@ -17,7 +17,7 @@
       };
 
       border = {
-        color = "#89b4fa";
+        color = "#C4A7E7";
         width = "3px";
         transition = "1.0s ease";
         radius = "5px";
@@ -26,9 +26,9 @@
       newtabLogo = "   __            __  ____          \A   / /____  _  __/ /_/ __/___  _  __\A  / __/ _ \\| |/_/ __/ /_/ __ \\| |/_/\A / /_/  __/>  </ /_/ __/ /_/ />  <  \A \\__/\\___/_/|_|\\__/_/  \\____/_/|_|  ";
 
       font = {
-        family = "CaskaydiaMono Nerd Font Proto";
+        family = "Dank Mono Nerd Font";
         size = "14px";
-        accent = "#89b4fa";
+        accent = "#C4A7E7";
       };
 
       tabs = {

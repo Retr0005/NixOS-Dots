@@ -4,7 +4,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-    jetbrains.idea-ultimate
     jdk
     scenebuilder
 
@@ -20,6 +19,8 @@
 
     freecad-wayland
     kicad-unstable
+    foliate
+    wireshark
 
     qbittorrent
     plantuml

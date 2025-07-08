@@ -40,6 +40,10 @@ in {
         system = final.system;
         config.allowUnfree = true;
       };
+      pkgs-stable = import inputs.nixpkgs-stable {
+        system = final.system;
+        config.allowUnfree = true;
+      };
     })
   ];
 
@@ -71,8 +75,6 @@ in {
 
   programs.nix-ld.enable = true;
 
-
-
   environment.systemPackages =
     (with pkgs; [
       lua
@@ -93,7 +95,7 @@ in {
       mesa
       egl-wayland
       pkgs-master.waybar # if wanted experimental next line
-      #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
+      pkgs-master.spotify
     ])
     ++ [python-packages];
   # OpenGL

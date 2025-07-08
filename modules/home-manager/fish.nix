@@ -5,6 +5,7 @@
 }: {
   programs.fish = {
     enable = true;
+    package = pkgs.pkgs-master.fish;
 
     shellAliases = {
       l = "eza -lh --icons";
